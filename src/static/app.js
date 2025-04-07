@@ -87,4 +87,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize app
   fetchActivities();
+
+  // AI-generated code to handle dark mode toggle
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("header").classList.toggle("dark-mode");
+
+    // Update activity cards
+    document.querySelectorAll(".activity-card").forEach((card) => {
+      card.classList.toggle("dark-mode");
+    });
+
+    // Update "Available Activities" section
+    document.getElementById("activities-container").classList.toggle("dark-mode");
+
+    // Update "Sign Up for an Activity" section
+    document.getElementById("signup-container").classList.toggle("dark-mode");
+  });
 });
