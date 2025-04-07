@@ -142,3 +142,15 @@ footer {
   padding: 20px;
   color: #666;
 }
+
+.participants-list {
+  margin-top: 10px; /* AI-generated line */
+  padding-left: 20px; /* AI-generated line */
+  list-style-type: disc; /* AI-generated line */
+  color: #555; /* AI-generated line */
+}
+
+.participants-list li {
+  margin-bottom: 5px; /* AI-generated line */
+  font-size: 14px; /* AI-generated line */
+}
