@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <p><strong>Participants:</strong></p>
+          <ul class="participants-list">
+            ${details.participants.map(participant => `<li>${participant}</li>`).join("")} <!-- AI-generated line -->
+          </ul>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -83,4 +87,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize app
   fetchActivities();
+
+  // AI-generated code to handle dark mode toggle
+  const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("header").classList.toggle("dark-mode");
+
+    // Update activity cards
+    document.querySelectorAll(".activity-card").forEach((card) => {
+      card.classList.toggle("dark-mode");
+    });
+
+    // Update "Available Activities" section
+    document.getElementById("activities-container").classList.toggle("dark-mode");
+
+    // Update "Sign Up for an Activity" section
+    document.getElementById("signup-container").classList.toggle("dark-mode");
+  });
 });
